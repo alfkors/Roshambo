@@ -10,15 +10,25 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    var firstPlayerValue: Int?
-    var secondPlayerValue: Int?
+    var playerValue: Int?
+    var opponentValue: Int?
     
     @IBOutlet var Result: UILabel!
     override func viewWillAppear(animated: Bool) {
-        if let firstPlayerValue = self.firstPlayerValue{
+        let matchResult = (Int(self.playerValue!),Int(self.opponentValue!))
+        
+        switch matchResult {
+        case (1,3), (2,1), (3,2):
+            self.Result.textColor = UIColor.greenColor()
             self.Result.text = "You Win!"
-        } else {
+        case (1,2), (2,3), (3,1):
             self.Result.textColor = UIColor.redColor()
+            self.Result.text = "You Lose!"
+        case (1,1), (2,2), (3,3):
+            self.Result.textColor = UIColor.blueColor()
+            self.Result.text = "It's a tie!"
+        default:
+            self.Result.textColor = UIColor.yellowColor()
         }
     }
     
@@ -28,10 +38,7 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     
     @IBAction func dismiss(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)

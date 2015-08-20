@@ -25,16 +25,40 @@
                                     <rect key="frame" x="146" y="426" width="92" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xl-lp-kyJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xl-lp-kyJ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Rock">
+                                <state key="normal" image="Rock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="169" y="124" width="46" height="30"/>
+                                    <rect key="frame" x="142" y="77" width="117" height="65"/>
                                 </variation>
                                 <connections>
                                     <action selector="playRock:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dg9-ge-t3q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1w-Jb-9NP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Paper">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="73" y="202" width="75" height="65"/>
+                                </variation>
+                                <connections>
+                                    <action selector="playPaper:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XZF-0p-MdG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK5-Zf-ckW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Scissors">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="251" y="202" width="75" height="65"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="J5l-UM-UVS" kind="presentation" identifier="playScissors" id="YSI-0d-1p7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,15 +67,22 @@
                             <mask key="subviews">
                                 <exclude reference="NaB-DR-A28"/>
                                 <exclude reference="5xl-lp-kyJ"/>
+                                <exclude reference="V1w-Jb-9NP"/>
+                                <exclude reference="wK5-Zf-ckW"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="NaB-DR-A28"/>
                                 <include reference="5xl-lp-kyJ"/>
+                                <include reference="V1w-Jb-9NP"/>
+                                <include reference="wK5-Zf-ckW"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="J5l-UM-UVS" kind="presentation" identifier="playPaper" id="Sm5-W1-Qos"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,19 +106,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="200" y="421" width="73" height="30"/>
+                                    <rect key="frame" x="164" y="424" width="73" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="dismiss:" destination="J5l-UM-UVS" eventType="touchUpInside" id="Mrg-Q3-E2Y"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQT-J4-Azn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQT-J4-Azn">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="215" y="304" width="49" height="21"/>
+                                    <rect key="frame" x="148" y="302" width="105" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -114,4 +145,12 @@
             <point key="canvasLocation" x="648" y="282"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Paper" width="75" height="65"/>
+        <image name="Rock" width="75" height="65"/>
+        <image name="Scissors" width="75" height="65"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Sm5-W1-Qos"/>
+    </inferredMetricsTieBreakers>
 </document>
