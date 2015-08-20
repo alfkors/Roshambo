@@ -118,26 +118,35 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="148" y="302" width="105" height="21"/>
+                                    <rect key="frame" x="40" y="302" width="311" height="21"/>
                                 </variation>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PaperRock" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-4W-ENx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="91" y="153" width="240" height="128"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="zYx-ac-iRv"/>
                                 <exclude reference="dQT-J4-Azn"/>
+                                <exclude reference="s1H-4W-ENx"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="zYx-ac-iRv"/>
                                 <include reference="dQT-J4-Azn"/>
+                                <include reference="s1H-4W-ENx"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="Result" destination="dQT-J4-Azn" id="fxH-jU-cs0"/>
+                        <outlet property="result" destination="s1H-4W-ENx" id="flT-3F-XfJ"/>
+                        <outlet property="resultCaption" destination="dQT-J4-Azn" id="Hy3-tM-i8R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pam-dg-yiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,6 +156,7 @@
     </scenes>
     <resources>
         <image name="Paper" width="75" height="65"/>
+        <image name="PaperRock" width="160" height="120"/>
         <image name="Rock" width="75" height="65"/>
         <image name="Scissors" width="75" height="65"/>
     </resources>

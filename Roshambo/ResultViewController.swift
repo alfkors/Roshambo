@@ -13,29 +13,37 @@ class ResultViewController: UIViewController {
     var playerValue: Int?
     var opponentValue: Int?
     
-    @IBOutlet var Result: UILabel!
+    @IBOutlet var result: UIImageView!
+    @IBOutlet var resultCaption: UILabel!
     override func viewWillAppear(animated: Bool) {
         let matchResult = (Int(self.playerValue!),Int(self.opponentValue!))
         
         switch matchResult {
-        case (1,3), (2,1), (3,2):
-            self.Result.textColor = UIColor.greenColor()
-            self.Result.text = "You Win!"
-        case (1,2), (2,3), (3,1):
-            self.Result.textColor = UIColor.redColor()
-            self.Result.text = "You Lose!"
+        case (1,3):
+            self.result.image = UIImage(named: "RockScissors")
+            self.resultCaption.text = "Rock crushes Scissors, You Win!"
+        case (1,2):
+            self.result.image = UIImage(named: "PaperRock")
+            self.resultCaption.text = "Paper covers Rock. You Lose!"
+        case (2,1):
+            self.result.image = UIImage(named: "PaperRock")
+            self.resultCaption.text = "Paper covers Rock. You Win!"
+        case (2,3):
+            self.result.image = UIImage(named: "ScissorsPaper")
+            self.resultCaption.text = "Scissors cut Paper. You Lose!"
+        case (3,2):
+            self.result.image = UIImage(named: "ScissorsPaper")
+            self.resultCaption.text = "Scissors cut Paper. You Win!"
+        case (3,1):
+            self.result.image = UIImage(named: "RockScissors")
+            self.resultCaption.text = "Rock crushes Scissors. You Lose!"
         case (1,1), (2,2), (3,3):
-            self.Result.textColor = UIColor.blueColor()
-            self.Result.text = "It's a tie!"
+            self.result.image = UIImage(named: "Tie")
+            self.resultCaption.text = "It's a tie!"
         default:
-            self.Result.textColor = UIColor.yellowColor()
+            self.resultCaption.textColor = UIColor.redColor()
+            self.resultCaption.text = "Pleae contact your system administrator."
         }
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     
